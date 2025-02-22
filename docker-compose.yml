@@ -1,0 +1,22 @@
+version: "3.3"
+services:
+  backend:
+    container_name: test-repo-backend
+    build: ./backend
+    image: vijikalavarkar/testrepoback:v1
+    ports:
+      - "4000:4000"
+    
+
+  frontend:
+    container_name: test-repo-frontend
+    build: ./frontend
+    image: vijikalavarkar/testrepofront:v1
+    ports:
+      - "5173:5173"
+
+  db:
+    container_name: mongo-container_name
+    image: mongo
+    ports:
+      - "27017:27017"
