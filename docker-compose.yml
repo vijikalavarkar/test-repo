@@ -1,5 +1,12 @@
 version: "3.3"
 services:
+
+  db:
+    container_name: mongo-container_name
+    image: mongo
+    ports:
+      - "27017:27017"
+
   backend:
     container_name: test-repo-backend
     build: ./backend
@@ -15,8 +22,4 @@ services:
     ports:
       - "5173:5173"
 
-  db:
-    container_name: mongo-container_name
-    image: mongo
-    ports:
-      - "27017:27017"
+  
